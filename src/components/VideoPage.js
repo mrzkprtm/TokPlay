@@ -34,7 +34,7 @@ const products = [
 
 const VideoPage = () => {
   const { videoId } = useParams();
-  const embedUrl = `https://www.youtube.com/embed/usiT3sYp_VA`;
+  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
 
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
