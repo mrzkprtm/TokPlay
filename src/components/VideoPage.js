@@ -34,29 +34,10 @@ const products = [
 
 const VideoPage = () => {
   const { videoId } = useParams();
-  const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+  const embedUrl = `https://www.youtube.com/embed/usiT3sYp_VA`;
 
   const [products, setProducts] = useState([]);
   const [comments, setComments] = useState([]);
-
-  useEffect(() => {
-    // Fetch product data from backend
-    axios.get('/api/products').then(response => {
-      setProducts(response.data);
-    });
-
-    // Fetch comments for the specific video from backend
-    axios.get(`/api/videos/${videoId}/comments`).then(response => {
-      setComments(response.data);
-    });
-  }, [videoId]);
-
-  const handleCommentSubmit = newComment => {
-    // Send comment data to backend and update state
-    axios.post(`/api/videos/${videoId}/comments`, newComment).then(response => {
-      setComments([...comments, response.data]);
-    });
-  };
 
   return (
     <Flex direction="column" align="center" p={4}>
@@ -89,7 +70,7 @@ const VideoPage = () => {
 
         {/* Column 2 (WriteCommentForm) */}
         <Box width="300px" p={4}>
-          <WriteCommentForm onSubmit={handleCommentSubmit} />
+          <WriteCommentForm />
         </Box>
       </Flex>
     </Flex>
