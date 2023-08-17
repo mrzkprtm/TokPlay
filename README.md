@@ -1,5 +1,3 @@
-Absolutely, here's an enhanced version of the README in Markdown format for your Tokopedia Play clone project:
-
 ```markdown
 # Tokopedia Play Clone
 
